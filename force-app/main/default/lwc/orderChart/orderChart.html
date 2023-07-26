@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title= 'Order Cost' icon-name="standard:segments">
+        <lightning-layout>
+            <lightning-layout-item size="4" class="slds-p-horizontal_medium">         
+            <lightning-combobox
+                name="weeks"
+                value={selectedWeek}
+                placeholder="Select Week"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+        </lightning-layout-item>
+        </lightning-layout>
+        <template if:true={chartConfiguration}>
+            <c-gen-chart chart-config={chartConfiguration}></c-gen-chart>
+        </template>
+    </lightning-card>
+</template>
